@@ -13,6 +13,5 @@ int main(void)
 		printf("2");
 	default:
 		printf("d");
-
 	}
 }
