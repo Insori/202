@@ -1,12 +1,25 @@
-#include <stdio.h>
+#include<stdio.h>
+
+typedef struct {
+    float x;
+    float y;
+} Jum;
+
+void AddValueToJum(Jum* j);
 
 int main(void)
 {
-	//만약에 nums[0]의 주소가 0x100이라면?
-	int nums[5] = { 10,20,30,40,50 };
-	int* ptr1 = nums + 2;	//ptr1: 100+4*2 = 108
-	int* ptr2 = &nums[0] + 2;	//ptr2: 100+4*2 = 108
+    Jum jum;
+    jum.x = 5.0f;
+    jum.y = 10.0f;
+    //call By Value로 jum의 x, y값이 바뀌지 않음.
+    AddValueToJum(&jum);
+    printf("%.1f, %.1f \n", jum.x, jum.y);
 
+    return 0;
+}
 
-	return 0;
+void AddValueToJum(Jum* j) {
+    j->x += 10.0f;        //(*j).x += 10.0f;
+    j->y += 15.0f;
 }
