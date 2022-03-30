@@ -1,9 +1,9 @@
 #include <iostream>
 using namespace std;
 
-void jiyuk(void)
+void jungjuk(void)
 {
-	//지역변수는 함수 호출이 끝나면 사라짐(0으로 초기화를 시킴)
+	//정적 지역변수는 선언되는 순간부터 계속 유지
 	int a = 0;
 	cout << "정적변수 a는 " << a << endl;
 	a++;
@@ -11,7 +11,7 @@ void jiyuk(void)
 
 int main(void)
 {
-	jiyuk();	//0
-	jiyuk();	//0
-	jiyuk();	//0
+	jungjuk();	//0
+	jungjuk();	//1
+	jungjuk();	//2
 }
