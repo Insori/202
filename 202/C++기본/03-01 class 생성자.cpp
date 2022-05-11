@@ -31,8 +31,8 @@ int main(void)
 
 Student::Student(void)
 {
-	nHakbun = 1234;
-	sName = "이사랑";
+	this->nHakbun = 1234;
+	this->sName = "이사랑";
 	cout << "학번이 등록되었습니다." << endl;
 }
 
@@ -44,8 +44,8 @@ void Student::show(void)
 
 Student::Student(int Hakbun, string Name)
 {
-	nHakbun = Hakbun;
-	sName = Name;
+	this->nHakbun = Hakbun;
+	this->sName = Name;
 	cout << "학번이 등록되었습니다." << endl;
 
 }
