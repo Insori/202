@@ -13,6 +13,8 @@ public:
 
 	//생성자: 객체가 생성될 때 호출되는 함수
 	Student(int Hakbun, const char* Name);
+	//소멸자: 객체가 메모리에서 해제될 떄, 호출되는 함수
+	~Student();
 	void show(void);
 };
 
@@ -39,5 +41,11 @@ void Student::show(void)
 {
 	cout << "학번은 " << nHakbun << "입니다." << endl;
 	cout << "이름은 " << sName << "입니다." << endl << endl;
+}
+
+Student::~Student()
+{
+	delete []sName;
+	cout << "소멸자 호출" << endl;
 }
 
