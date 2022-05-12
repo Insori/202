@@ -1,5 +1,5 @@
 #include <iostream>	//cout, endl 객체를 가지고 있음
-#include <string>	//string 클래스를 가지고 있음
+#include <string.h>	
 
 using namespace std;
 
@@ -7,35 +7,32 @@ class Student
 {
 private:	
 	int nHakbun;
-	string sName;
+	char* sName;
 	
 public:
 
 	//생성자: 객체가 생성될 때 호출되는 함수
-	Student(void);
-	Student(int Hakbun, string Name);
+	Student(int Hakbun, const char* Name);
 	void show(void);
 };
 
 int main(void)
 {
-	Student* stu = new Student[6];
-	for (int i = 0; i < 6; i++) {
-		//배열이므로 ->를 쓰지 않고, .으로 멤버 접근
-		stu[i].show();
-	}
-
-	delete []stu;
+	Student stu1 = Student(1111, "JWP");
+	stu1.show();
 
 	return 0;
 }
 
-
-Student::Student(void)
+Student::Student(int Hakbun, const char* Name)
+// 객체 생성과 동시에 멤버변수 초기화	//형식 - 멤버변수(매개변수)
+// const/참조형 멤버변수를 사용할 수 있다.
+	:nHakbun(Hakbun)
 {
-	this->nHakbun = 1234;
-	this->sName = "이사랑";
-	cout << "학번이 등록되었습니다." << endl;
+	cout << "일반생성자 호출" << endl;
+	int len = strlen(Name) + 1;	//동적할당만큼 공간의 크기를 구하고
+	sName = new char[len];	//그 크기만큼 배열로 동적할당
+	strcpy(sName, Name);	//매개변수에 있는 문자열 복사
 }
 
 void Student::show(void)
@@ -44,11 +41,3 @@ void Student::show(void)
 	cout << "이름은 " << sName << "입니다." << endl << endl;
 }
 
-Student::Student(int Hakbun, string Name)
-// 객체 생성과 동시에 멤버변수 초기화	//형식 - 멤버변수(매개변수)
-// const/참조형 멤버변수를 사용할 수 있다.
-	: nHakbun(Hakbun), sName(Name)
-{
-	cout << "학번이 등록되었습니다." << endl;
-
-}
