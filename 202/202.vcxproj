@@ -25,6 +25,7 @@
     <ClCompile Include="C++기본\03-02 동적할당.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="C++기본\04-01.cpp" />
     <ClCompile Include="C++기본\교과서 130쪽 2번 문제.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
@@ -41,6 +42,9 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="C++기본\연산자오버로딩(기본).cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C++기본\04-01.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
