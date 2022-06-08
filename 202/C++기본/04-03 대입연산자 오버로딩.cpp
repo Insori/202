@@ -22,7 +22,10 @@ public:
 	//연산자 오버로딩
 	Student& operator=(const Student& rhs)
 	{
+
 		cout << "대입연산자 호출" << endl;
+		//기존에 존재하는 공간을 제거하고 새 공간 할당 준비
+		delete[]sName;
 		nHakbun = rhs.nHakbun;
 		int len = strlen(rhs.sName) + 1;		//공간 개수 측정
 		sName = new char[len];		//공간 생성
