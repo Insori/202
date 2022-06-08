@@ -18,6 +18,19 @@ public:
 
 	//소멸자: 객체가 메모리에서 해제될 떄, 호출되는 함수
 	~Student();
+
+	//연산자 오버로딩
+	Student& operator=(const Student& rhs)
+	{
+		cout << "대입연산자 호출" << endl;
+		nHakbun = rhs.nHakbun;
+		int len = strlen(rhs.sName) + 1;		//공간 개수 측정
+		sName = new char[len];		//공간 생성
+		strcpy(sName, rhs.sName);
+
+		return *this;
+	}
+
 	void show(void);
 };
 
@@ -30,7 +43,11 @@ int main(void)
 
 	//복사 생성자 호출
 	Student stu2 = stu1;
-	stu2.show();
+	stu2.show();	//(1111, "JWP")
+
+	//대입연산자 호출
+	stu1 = stu3;	//stu1.operator=(stu3);
+	stu1.show();	//(2222, "JYP")
 
 	return 0;
 }
@@ -56,9 +73,9 @@ Student::Student(const Student& rhs)
 	:nHakbun(rhs.nHakbun), sName(rhs.sName)
 {
 	cout << "복사생성자" << endl;
-	int len = strlen(sName) + 1;	
+	int len = strlen(rhs.sName) + 1;	
 	sName = new char[len];
-	strcpy(sName, sName);
+	strcpy(sName, rhs.sName);
 }
 
 Student::~Student()
