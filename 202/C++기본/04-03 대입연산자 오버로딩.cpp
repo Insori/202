@@ -25,30 +25,60 @@ public:
 	void show(void);
 };
 
+class HighSchoolStudent : public Student
+{
+public:
+	//생성자
+	HighSchoolStudent(int Hakbun, const char* Name, string Hakgwa)
+		: Student(Hakbun, Name), sHakgwa(Hakgwa) 
+	{
+		cout << "HighSchoolStudent 일반 생성자 호출" << endl;
+	}
+
+	//소멸자
+	~HighSchoolStudent() 
+	{
+		cout << "HighSchoolStudent 소멸자 호출" << endl;
+
+	}
+
+private:
+	string sHakgwa;
+
+};
+
 int main(void)
 {
-	//일반 생성자 호출
-	Student stu1 = Student(1111, "JWP");
-	Student stu3 = Student(2222, "JYP");
-	stu1.show();
-
-	//복사 생성자 호출
-	Student stu2 = stu1;
-	stu2.show();	//(1111, "JWP")
-
-	//대입연산자 호출
-	stu1 = stu3;	//stu1.operator=(stu3);
-	stu1.show();	//(2222, "JYP")
+	HighSchoolStudent hss = HighSchoolStudent(1111, "JWP", "soft");
+	hss.show();	// 부모클래스의 멤버함수를 호출(자식에 구현 X)
 
 	return 0;
 }
+
+//int main(void)
+//{
+//	//일반 생성자 호출
+//	Student stu1 = Student(1111, "JWP");
+//	Student stu3 = Student(2222, "JYP");
+//	stu1.show();
+//
+//	//복사 생성자 호출
+//	Student stu2 = stu1;
+//	stu2.show();	//(1111, "JWP")
+//
+//	//대입연산자 호출
+//	stu1 = stu3;	//stu1.operator=(stu3);
+//	stu1.show();	//(2222, "JYP")
+//
+//	return 0;
+//}
 
 Student::Student(int Hakbun, const char* Name)
 // 객체 생성과 동시에 멤버변수 초기화	//형식 - 멤버변수(매개변수)
 // const/참조형 멤버변수를 사용할 수 있다.
 	:nHakbun(Hakbun)
 {
-	cout << "일반생성자 호출" << endl;
+	cout << "Student 일반생성자 호출" << endl;
 	int len = strlen(Name) + 1;	//동적할당만큼 공간의 크기를 구하고
 	sName = new char[len];	//그 크기만큼 배열로 동적할당
 	strcpy(sName, Name);	//매개변수에 있는 문자열 복사
@@ -63,7 +93,7 @@ void Student::show(void)
 Student::Student(const Student& rhs)
 	:nHakbun(rhs.nHakbun), sName(rhs.sName)
 {
-	cout << "복사생성자" << endl;
+	cout << "Student 복사생성자" << endl;
 	int len = strlen(rhs.sName) + 1;	
 	sName = new char[len];
 	strcpy(sName, rhs.sName);
@@ -86,7 +116,7 @@ Student& Student::operator=(const Student& rhs)
 Student::~Student()
 {
 	delete []sName;
-	cout << "소멸자 호출" << endl;
+	cout << "Student 소멸자 호출" << endl;
 }
 
 
