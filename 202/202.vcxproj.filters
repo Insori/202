@@ -45,9 +45,21 @@
     <ClCompile Include="C++기본\04-03 대입연산자 오버로딩.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="C++기본\176쪽.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="수행평가3_2212인소리.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="06-01 다형성.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C++기본\04-01.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="클래스 설계.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
