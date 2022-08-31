@@ -6,7 +6,8 @@ using namespace std;
 class Animal {
 public:
 	void eat(void) { cout << "동물먹어" << endl; }
-	void roar(void) { cout << "동물짖어" << endl; }
+	//roar 함수를 가상함수테이블에 등록(동적 바인딩)
+	virtual void roar(void) { cout << "동물짖어" << endl; }
 	void walk(void) { cout << "동물걸어" << endl; }
 
 private:
@@ -22,7 +23,7 @@ public:
 
 class Dog : public Animal {
 public:
-	void roar(void) { cout << "멍멍" << endl; }
+	void roar(void) override { cout << "멍멍" << endl; }
 };
 
 void main(void)
