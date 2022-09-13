@@ -54,6 +54,9 @@
     <ClCompile Include="06-01 다형성.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="07-01 함수템플릿.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C++기본\04-01.h">
