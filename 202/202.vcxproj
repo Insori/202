@@ -25,7 +25,9 @@
     <ClCompile Include="07-01 함수템플릿.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="07-02 클래스템플릿.cpp" />
+    <ClCompile Include="07-02 클래스템플릿.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="C++기본\03-01 class 생성자.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
@@ -65,6 +67,7 @@
     <ClCompile Include="수행평가3_2212인소리.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="템플릿.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C++기본\04-01.h">
