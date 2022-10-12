@@ -15,10 +15,10 @@ using namespace std;
 int main(void) {
     //map<key 자료형, value 자료형>
     map<string, string> m;
-    m.insert(pair<string, string>("김신", "공유"));
-    m.insert(pair<string, string>("저승사자", "이동욱"));
-    m.insert(pair<string, string>("지은탁", "김고은"));
-    m.insert(pair<string, string>("써니", "유인나"));
+    m["김신"] = "공유";
+    m["저승사자"] = "이동욱";
+    m["지은탁"] = "김고은";
+    m["써니"] = "유인나";
     
     map<string, string>::iterator iter;
 
@@ -30,11 +30,8 @@ int main(void) {
 
     cout << endl;
 
-    map<string, string>::iterator actor = m.find("김신");
-
     //key가 존재하는지 체크
-    if (actor != m.end()) 
-        cout << "주인공은 " << actor->second << endl;
+    cout << "주인공은 " << m["김신"] << endl;
 
     return 0;
 }
