@@ -72,6 +72,9 @@
     <ClCompile Include="08-02 map.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="iterator문제.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C++기본\04-01.h">
