@@ -81,6 +81,9 @@
     <ClCompile Include="09-01 enum.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="09-02 범위기반.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C++기본\04-01.h">
