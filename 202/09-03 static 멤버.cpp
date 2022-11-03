@@ -5,17 +5,8 @@ using namespace std;
 
 class Champ {
 public:
-	Champ(int age, const string& name)
-		: mAge(age), mName(name) 
-	{
-		mCount++;
-	}
-	static int getCount(void)
-	{
-		//일반 멤버변수는 static 멤버함수에 적용할 수 없다.
-		//mAge = 10;
-		return mCount;
-	}
+	Champ(int age, const string& name);
+	static int getCount(void);
 
 private:
 	int mAge;
@@ -38,4 +29,16 @@ int main(void)
 	//mCount는 객체가 공유되어 총 3번 증가
 	cout << Champ::getCount() << endl;
 	cout << teemo->getCount() << endl;
+}
+
+Champ::Champ(int age, const string& name)
+	: mAge(age), mName(name)
+{
+	mCount++;
+}
+int Champ::getCount(void)
+{
+	//일반 멤버변수는 static 멤버함수에 적용할 수 없다.
+	//mAge = 10;
+	return mCount;
 }
